@@ -8,8 +8,15 @@
       <i><%= place.address %></i><br /><br />
       <p><%= place.description %></p><br />
 
+    </div>
+
   </div>
 
 <% end %>
 
-<%= will_paginate @places %>
+<div class="flickr_pagination">
+  <div class="page_info">
+    <%= page_entries_info @tasks %>
+  </div>
+  <%= will_paginate @tasks, :container => false %>
+</div>
