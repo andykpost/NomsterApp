@@ -4,6 +4,7 @@
   <i><%= @place.address %></i>
   <br/><br/>
   <p><%= @place.description %></p>
+  <%= f.input :picture %>
   
 <% if @place.latitude.present? && @place.longitude.present? %>
 
@@ -98,3 +99,8 @@
     </div>
   <% end %>
 </div>
+
+<%= simple_form_for @photo, url: place_photos_path(@place) do |f| %>
+  <%= f.input :caption %>
+  <%= f.submit "Write a caption", class: 'btn btn-primary' %>
+<% end %>
