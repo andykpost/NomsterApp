@@ -137,3 +137,8 @@
 <div class="row">
 
 <div class="clear"></div>
+
+<% @place.photos.each do |photo| %>
+  <%= image_tag photo.picture.url %>
+  <%= photo.caption %>
+<% end %>
